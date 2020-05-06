@@ -2,6 +2,7 @@ package app
 
 import (
 	"github.com/revel/revel"
+	"github.com/vaibhawj/beer-service/app/data"
 )
 
 var (
@@ -34,7 +35,7 @@ func init() {
 	// revel.DevMode and revel.RunMode only work inside of OnAppStart. See Example Startup Script
 	// ( order dependent )
 	// revel.OnAppStart(ExampleStartupScript)
-	// revel.OnAppStart(InitDB)
+	revel.OnAppStart(data.InitDB)
 	// revel.OnAppStart(FillCache)
 }
 
